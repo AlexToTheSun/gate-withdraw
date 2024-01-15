@@ -1,3 +1,42 @@
+### Настройка
+- Ресурс: https://github.com/th0masi/gate-withdraw
+
+Загружаем
+```
+git clone https://github.com/th0masi/gate-withdraw
+```
+Создаем окно tmux
+```
+tmux new -s gate
+```
+У нас уже установлены часто используемые версии python, выбираем нужную
+```
+update-alternatives --config python3
+python3 --version
+# Нужна Python 3.11
+```
+Теперь создаем виртуальное окружение
+```
+cd /root/gate-withdraw
+mkdir /root/gate-withdraw/venv
+python3.11 -m venv /root/gate-withdraw/venv
+source /root/gate-withdraw/venv/bin/activate
+
+pip install -r requirements.txt
+pip install requests
+```
+Теперь там надо настроить скрипт как это описано на странице https://github.com/th0masi/gate-withdraw . если вкратце:
+- config.py
+- кошельки в файл wallets.txt
+
+
+Запускаем
+```
+python main.py
+```
+
+
+## Описание
 ![Скриншот софта](https://i.imgur.com/hqwFMrT.png)
 
 
